@@ -1,6 +1,7 @@
 package io.github.carvalho_xx.libraryAPI.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -8,6 +9,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "livro")
+@Data
 public class Livro {
 
     @Column(name = "id", nullable = false)
@@ -33,6 +35,6 @@ public class Livro {
 
     @ManyToOne
     @JoinColumn(name = "id_autor")
-    private Autor auto;
+    private Autor autor;
 
 }
